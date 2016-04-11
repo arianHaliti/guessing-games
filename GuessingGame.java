@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+/**
+ *
+ * @author dwen
+ */
 
 
 public class GuessingGame {
