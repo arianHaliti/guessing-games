@@ -1,12 +1,13 @@
 import java.util.Scanner;
 
 public class GuessingGame {
+	
 
 //The main routine
 //----------------------------------------------------------------
 	public static void main(String args[])
 	{
-	
+		
 	System.out.println("########################################");
 	System.out.println("#Welcome to the guessing game          #");
 	System.out.println("#Please choose the game difficulty      #");
@@ -29,7 +30,6 @@ static void playGame(int selectGame)
 	{
 	
 	int game = selectGame;
-	
 	int tries = 0;
 	int playersNumber;
 	int computersNumber = 0;
@@ -50,12 +50,15 @@ static void playGame(int selectGame)
 		tries = 15;
 		computersNumber = ((int) (100 * Math.random()+1));
 		break;
+	
 	}
 	
 	while(tries >= 1){
 		
 		Scanner inputGame = new Scanner(System.in);
+		
 		System.out.print("You have "+tries+" left, select a number: ");
+		
 		try{
 		playersNumber = inputGame.nextInt();
 		
@@ -65,23 +68,16 @@ static void playGame(int selectGame)
 		else if(playersNumber > computersNumber){tries -= 1; System.out.println("Too high");}
 		
 		}catch(Exception error){
-		try{
-		
-		playersNumber = inputGame.nextInt();
-		
-		}catch(Exception errorw){
 			System.out.println("Error, please type a number!");;
-		}
 			tries -= 1;
 		}
-		
+	
 		}
-		
 		
 	System.out.println("You have run out of tries, the number was: "+computersNumber);
 	
 }	
-
+	
 //----------------------------------------------------------------
 
 
@@ -117,5 +113,6 @@ static void playGame(int selectGame)
 		   }
 	}
 //-----------------------------------------------------------------
+	
 	
 }
