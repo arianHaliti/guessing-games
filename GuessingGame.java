@@ -1,21 +1,11 @@
 import java.util.Scanner;
 
-    /**
-	*
-	* @author dwen
-	*/
-
 public class GuessingGame {
-
-
-	
 
 //The main routine
 //----------------------------------------------------------------
 	public static void main(String args[])
 	{
-	
-
 	
 	System.out.println("########################################");
 	System.out.println("#Welcome to the guessing game          #");
@@ -32,7 +22,6 @@ public class GuessingGame {
 	}
 //----------------------------------------------------------------
 	
-	
 
 //###Play the game### Subroutine #1
 //----------------------------------------------------------------
@@ -41,131 +30,63 @@ static void playGame(int selectGame)
 	
 	int game = selectGame;
 	
-	int tries;
+	int tries = 0;
 	int playersNumber;
-	int computersNumber;
+	int computersNumber = 0;
 	
 	switch(game){
 	case 1:
+		System.out.println("You have selected game difficulty hard. If you want to cancel the game pres 0");
 		tries = 7;
 		computersNumber = ((int) (100 * Math.random()+1));
-		
-		System.out.println("You have selected game difficulty hard. If you want to cancel the game pres 0");
-		
-		while(tries >= 1){
-			
-			Scanner inputGame = new Scanner(System.in);
-			System.out.print("You have "+tries+" left, select a number: ");
-			try{
-			playersNumber = inputGame.nextInt();
-			
-			if(playersNumber == 0) return;
-			else if(playersNumber == computersNumber){System.out.println("You won! The number was " +computersNumber); return;}
-			else if(playersNumber < computersNumber){tries -= 1; System.out.println("Too low");}
-			else if(playersNumber > computersNumber){tries -= 1; System.out.println("Too high");}
-			
-			}catch(Exception error){
-			try{
-			
-			playersNumber = inputGame.nextInt();
-			
-			}catch(Exception errorw){
-				System.out.println("Error, please type a number!");;
-			}
-				tries -= 1;
-			}
-			
-			}
-			
-			
-		System.out.println("You have run out of tries, the number was: "+computersNumber);
-		
 		break;
-		
 	case 2:
+		System.out.println("You have selected game difficulty medium. If you want to cancel the game pres 0");
 		tries = 10;
 		computersNumber = ((int) (100 * Math.random()+1));
-		
-		System.out.println("You have selected game difficulty medium. If you want to cancel the game pres 0");
-		
-		while(tries >= 1){
-			
-			Scanner inputGame = new Scanner(System.in);
-			System.out.print("You have "+tries+" left, select a number: ");
-			try{
-			playersNumber = inputGame.nextInt();
-			
-			if(playersNumber == 0) return;
-			else if(playersNumber == computersNumber){System.out.println("You won! The number was " +computersNumber); return;}
-			else if(playersNumber < computersNumber){tries -= 1; System.out.println("Too low");}
-			else if(playersNumber > computersNumber){tries -= 1; System.out.println("Too high");}
-			
-			}catch(Exception error){
-			try{
-			
-			playersNumber = inputGame.nextInt();
-			
-			}catch(Exception errorw){
-				System.out.println("Error, please type a number!");;
-			}
-				tries -= 1;
-			}
-			
-			}
-			
-			
-		System.out.println("You have run out of tries, the number was: "+computersNumber);
-		
 		break;
-		
 	case 3:
+		System.out.println("You have selected game difficulty easy. If you want to cancel the game pres 0");
 		tries = 15;
 		computersNumber = ((int) (100 * Math.random()+1));
-		
-		System.out.println("You have selected game difficulty easy. If you want to cancel the game pres 0");
-		
-		while(tries >= 1){
-			
-			Scanner inputGame = new Scanner(System.in);
-			System.out.print("You have "+tries+" left, select a number: ");
-			try{
-			playersNumber = inputGame.nextInt();
-			
-			if(playersNumber == 0) return;
-			else if(playersNumber == computersNumber){System.out.println("You won! The number was " +computersNumber); return;}
-			else if(playersNumber < computersNumber){tries -= 1; System.out.println("Too low");}
-			else if(playersNumber > computersNumber){tries -= 1; System.out.println("Too high");}
-			else if(playersNumber == 0) return;
-			
-			
-			}catch(Exception error){
-			try{
-			
-			playersNumber = inputGame.nextInt();
-			
-			}catch(Exception errorw){
-				System.out.println("Error, please type a number!");;
-			}
-				tries -= 1;
-			}
-			
-			}
-			
-			
-		System.out.println("You have run out of tries, the number was: "+computersNumber);
-		
 		break;
 	default:
 		System.out.println("Select a game form 1-3");
+		//startGame();
 		break;
 	}
-
+	
+	while(tries >= 1){
+		
+		Scanner inputGame = new Scanner(System.in);
+		System.out.print("You have "+tries+" left, select a number: ");
+		try{
+		playersNumber = inputGame.nextInt();
+		
+		if(playersNumber == 0) return;
+		else if(playersNumber == computersNumber){System.out.println("You won! The number was " +computersNumber); return;}
+		else if(playersNumber < computersNumber){tries -= 1; System.out.println("Too low");}
+		else if(playersNumber > computersNumber){tries -= 1; System.out.println("Too high");}
+		
+		}catch(Exception error){
+		try{
+		
+		playersNumber = inputGame.nextInt();
+		
+		}catch(Exception errorw){
+			System.out.println("Error, please type a number!");;
+		}
+			tries -= 1;
+		}
+		
+		}
+		
+		
+	System.out.println("You have run out of tries, the number was: "+computersNumber);
+	
 }	
 
-	
 //----------------------------------------------------------------
-
-
 
 
 //###Start the game### Subroutine #2
@@ -200,6 +121,5 @@ static void playGame(int selectGame)
 		   }
 	}
 //-----------------------------------------------------------------
-	
 	
 }
