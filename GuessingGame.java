@@ -50,10 +50,6 @@ static void playGame(int selectGame)
 		tries = 15;
 		computersNumber = ((int) (100 * Math.random()+1));
 		break;
-	default:
-		System.out.println("Select a game form 1-3");
-		//startGame();
-		break;
 	}
 	
 	while(tries >= 1){
